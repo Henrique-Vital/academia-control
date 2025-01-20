@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 20, 20, 20;
+  --primary: 56, 189, 248;
+  --secondary: 232, 121, 249;
+  --accent: 251, 191, 36;
+}
+
+.light {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 240, 240, 240;
+  --background-end-rgb: 255, 255, 255;
+  --primary: 3, 105, 161;
+  --secondary: 147, 51, 234;
+  --accent: 245, 158, 11;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  font-family: "Poppins", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.light .glassmorphism {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.neon-border {
+  box-shadow: 0 0 5px rgb(var(--primary)), 0 0 20px rgb(var(--primary));
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, rgb(var(--primary)), rgb(var(--secondary)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-full font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800;
+}
+
+.btn-primary {
+  @apply bg-blue-500 text-white hover:bg-blue-600 focus:ring-blue-500;
+}
+
+.btn-secondary {
+  @apply bg-purple-500 text-white hover:bg-purple-600 focus:ring-purple-500;
+}
+
+.input {
+  @apply mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 bg-gray-700 text-white;
+}
+
+.light .input {
+  @apply bg-white text-gray-800 border-gray-300;
+}
+
+.label {
+  @apply block text-sm font-medium text-gray-300 mb-1;
+}
+
+.light .label {
+  @apply text-gray-700;
+}
+
+.card {
+  @apply glassmorphism p-6 mb-6;
+}
+
+.light .card {
+  @apply bg-white text-gray-800 shadow-md;
+}
+
